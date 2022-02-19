@@ -84,7 +84,7 @@ paths:
               $ref: '#/components/schemas/JoinGameRequest'
       responses:
         "200":
-          description: Bomb successfully placed
+          description: Game successfully joined
           content:
             application/json:
               schema:
@@ -126,9 +126,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/GameDetailResponse'
         "400":
-          description: "The request is null, or the player name is null or the game\
-            \ cannot be started (already started, too many players), or not the same\
-            \ as the player"
+          description: "The request is null, or the game is not started or the player\
+            \ is already dead, or the coords are wrong."
         "404":
           description: "The game with this ID, or the player does not exist"
         "429":
